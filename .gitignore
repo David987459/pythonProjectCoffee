@@ -1,0 +1,6 @@
+/.venv/
+/.idea/
+
+*.imp
+*.xml
+/.db.sqlite3
