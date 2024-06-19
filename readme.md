@@ -37,9 +37,25 @@ migrations -- složka, která obsahuje migrace
 admin.py -- administrační část
 apps.py -- nastavení aplikace (necháme beze změn)
 models.py -- zde jsou definované modely (tabulky databáze)
-tests.py -- zde řešíme testování (ukážeme si později)
+tests.py -- zde řešíme testování
 views.py -- zde bude logika (propojení databáze a template)
 `
+
+### Registrace aplikace
+Aplikaci můžume zaregistrovat v souboru .\ProjectCoffee\settings.py:
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    # our applications
+    'viewer',
+]
+```
 
 
 
