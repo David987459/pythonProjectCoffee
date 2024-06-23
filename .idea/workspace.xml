@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18e3f5d-aa27-499b-ba0b-1e640ccf16de" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/osnova.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/pythonProjectCoffee.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pythonProjectCoffee.iml" afterDir="false" />
+    <list default="true" id="b18e3f5d-aa27-499b-ba0b-1e640ccf16de" name="Changes" comment="Osnova a DB Diag">
+      <change afterPath="$PROJECT_DIR$/DB_DIag_code.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -87,6 +85,15 @@
       <workItem from="1719045030465" duration="944000" />
       <workItem from="1719128407419" duration="1428000" />
     </task>
+    <task id="LOCAL-00001" summary="Osnova a DB Diag">
+      <option name="closed" value="true" />
+      <created>1719135473706</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719135473707</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -102,6 +109,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Osnova a DB Diag" />
+    <option name="LAST_COMMIT_MESSAGE" value="Osnova a DB Diag" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
