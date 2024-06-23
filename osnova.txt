@@ -1,0 +1,19 @@
+Osnova Projektu
+
+Coffee
+
+1.DB Schema
+2.Django nastaveni / migration a META
+3.Layout Webu
+4.Admin Stranka
+5.Registrace uzivatelu a prace s nimi
+6.Obrazky
+7.Kosik
+8.Objednavky a platba
+9.Vyhledavani
+
+
+
+Salonek
+
+1.Rezervace
