@@ -12,6 +12,7 @@ Coffee
 8.Objednavky a platba
 9.Vyhledavani
 
+10.Mlynky druhy kafe atd.
 
 
 Salonek
