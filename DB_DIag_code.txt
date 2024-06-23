@@ -1,41 +1,37 @@
 // Use DBML to define your database structure
 // Docs: https://dbml.dbdiagram.io/docs
+
 Table hodnoceni {
  reg_user_id integer
  hodnoceni varchar
  hvezdy integer
  datum timestamp
 }
+
 Table produkty {
  produkt_id integer [primary key]
  název_produktu varchar
  náhled url
  druh_produktu varchar
- kategorie_produktu varchar
+ zeme_puvodu varchar
+ kategorie_produktu bool
  cena integer
- počet_produktů integer
  popis varchar
  ks_skladem integer
 }
-Table koš {
+
+Table kos {
+kos_id integer
 produkt_id integer
-název_produktu varchar
-cena integer
-počet_produktů integer
-cena_celkem integer
-cena_objednávky integer
+cena_celkem float
 }
+
 Table objednávka {
 order_id integer
 datum_objednávky datetime
-jmeno varchar
-prijmeni varchar
-adresa_doručení varchar
-název_produktu varchar
-počet_produktů integer
-produkt_id integer
-cena_celkem integer
+user_id integer
 cena_objednávky integer
+kos_id integer
 }
 
 Table uzivatele {
@@ -50,23 +46,33 @@ Table uzivatele {
  mesto varchar
 }
 
+Table pocet_prod {
+  prod_id integer
+  KS integer
+}
+
+Table zeme_puvodu {
+  zeme_id integer
+  Nazev_zeme varchar
+}
+
+Table druh_prod {
+  druh_id integer
+  druh_prod varchar
+
+}
+
 Ref: produkty.produkt_id < hodnoceni.hodnoceni
 Ref: produkty.produkt_id < hodnoceni.hvezdy
 Ref: hodnoceni.reg_user_id < uzivatele.user_id
 Ref: uzivatele.oblibene > produkty.produkt_id // many-to-one
-Ref: produkty.produkt_id > koš.produkt_id
-Ref: produkty.název_produktu > koš.název_produktu
-Ref: produkty.cena > koš.cena
-Ref: produkty.počet_produktů > koš.počet_produktů
-Ref: koš.název_produktu > objednávka.název_produktu
-Ref: koš.produkt_id > objednávka.produkt_id
-Ref: koš.počet_produktů > objednávka.počet_produktů
-Ref: koš.cena_celkem > objednávka.cena_celkem
-Ref: koš.cena_objednávky > objednávka.cena_objednávky
+Ref: uzivatele.user_id > objednávka.user_id
 
-Ref: uzivatele.ulice > objednávka.adresa_doručení
-Ref: uzivatele.jmeno > objednávka.jmeno
-Ref: uzivatele.prijmeni > objednávka.prijmeni
-Ref: uzivatele.psc > objednávka.adresa_doručení
-Ref: uzivatele.mesto > objednávka.adresa_doručení
+Ref: produkty.produkt_id < pocet_prod.prod_id
 
+Ref: kos.kos_id > objednávka.kos_id
+Ref: kos.kos_id > pocet_prod.prod_id
+
+Ref: zeme_puvodu.zeme_id < produkty.zeme_puvodu
+
+Ref: druh_prod.druh_id < produkty.druh_produktu
