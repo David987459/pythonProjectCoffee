@@ -65,3 +65,10 @@ INSTALLED_APPS = [
 - a v settings.py časť TEMPLATES r. 60 som nadstavila 'DIRS' na [BASE_DIR / 'templates'],.
 
 Pri otvorení stránky zobrazí: Welcome to CoffeShop!
+
+### Create admin 
+Pomocí příkazu `admin manage.py createsuperuser` vytvoříme admin panel s přihlašováním.
+
+
+
+
