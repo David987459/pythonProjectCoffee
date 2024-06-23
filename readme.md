@@ -57,5 +57,11 @@ INSTALLED_APPS = [
 ]
 ```
 
+### Template pre base.html a templates s home.html
+- pridala som zložku templates s base.html, nav.html a footer.html,
+- podom som pridala do viewer zložku templates pre domovú stránku s názvom home.html,
+- do views som vložila funkciu pre home stránku, 
+- do urls.py som pridala path pre funkciu,
+- a v settings.py časť TEMPLATES r. 60 som nadstavila 'DIRS' na [BASE_DIR / 'templates'],.
 
-
+Pri otvorení stránky zobrazí: Welcome to CoffeShop!
