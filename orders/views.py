@@ -1,16 +1,16 @@
 from django.shortcuts import render, redirect
 from .models import OrderItem
-from forms_1 import OrderItemForm
+from .forms import OrderItemModelForm
 
 
 def create_order(request):
     if request.method == 'POST':
-        form = OrderItemForm(request.POST)
+        form = OrderItemModelForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('order_summary')
     else:
-        form = OrderItemForm()
+        form = OrderItemModelForm()
     return render(request, 'orders/create_order.html', {'form': form})
 
 def order_summary(request):

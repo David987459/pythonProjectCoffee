@@ -4,19 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18e3f5d-aa27-499b-ba0b-1e640ccf16de" name="Changes" comment="Osnova a DB Diag">
-      <change afterPath="$PROJECT_DIR$/DB_DIag_code.txt" afterDir="false" />
+    <list default="true" id="b18e3f5d-aa27-499b-ba0b-1e640ccf16de" name="Changes" comment="Create orders app.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectCoffee/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCoffee/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectCoffee/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCoffee/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/forms_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_COMMON_BRANCH" value="master" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;David987459&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/David987459/pythonProjectCoffee.git&quot;,
+    &quot;accountId&quot;: &quot;9710ff31-158b-4475-afeb-0f6b1249f429&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -29,14 +58,14 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;create__orders__application&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -83,17 +112,51 @@
       <updated>1718710212649</updated>
       <workItem from="1718710220731" duration="3000" />
       <workItem from="1719045030465" duration="944000" />
-      <workItem from="1719128407419" duration="1428000" />
+      <workItem from="1719128407419" duration="2317000" />
+      <workItem from="1719145517725" duration="81000" />
+      <workItem from="1719145835598" duration="431000" />
     </task>
-    <task id="LOCAL-00001" summary="Osnova a DB Diag">
+    <task id="LOCAL-00001" summary="Test">
       <option name="closed" value="true" />
-      <created>1719135473706</created>
+      <created>1719133462287</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1719135473707</updated>
+      <updated>1719133462287</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Osnova">
+      <option name="closed" value="true" />
+      <created>1719134076806</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719134076806</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Create admin">
+      <option name="closed" value="true" />
+      <created>1719136734695</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719136734695</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Create admin">
+      <option name="closed" value="true" />
+      <created>1719140769841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719140769842</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Create orders app.">
+      <option name="closed" value="true" />
+      <created>1719143459684</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719143459684</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,8 +174,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Osnova a DB Diag" />
-    <option name="LAST_COMMIT_MESSAGE" value="Osnova a DB Diag" />
+    <MESSAGE value="Test" />
+    <MESSAGE value="Osnova" />
+    <MESSAGE value="Create admin" />
+    <MESSAGE value="Create orders app." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create orders app." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

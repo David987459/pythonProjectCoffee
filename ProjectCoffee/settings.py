@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # Nase aplikace
     'viewer',
+    'orders',
 ]
 
 MIDDLEWARE = [
