@@ -2,7 +2,7 @@ Osnova Projektu
 
 Coffee
 
-1.DB Schema
+1.DB Schema ok
 2.Django nastaveni / migration a META
 3.Layout Webu
 4.Admin Stranka
@@ -12,9 +12,8 @@ Coffee
 8.Objednavky a platba
 9.Vyhledavani
 
-10.Mlynky druhy kafe atd.
-
 
 Salonek
 
 1.Rezervace
+2.Obrazek
