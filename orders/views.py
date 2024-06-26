@@ -8,10 +8,10 @@ def create_order(request):
         form = OrderItemModelForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('order_summary')
+            return redirect('order_summary').order_by('title')
     else:
         form = OrderItemModelForm()
-    return render(request, 'orders/create_order.html', {'form': form})
+    return render(request,'create_order.html',{'form': form})
 
 def order_summary(request):
     order_items = OrderItem.objects.all()

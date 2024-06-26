@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h3>Vaše objednávka:</h3>
+<ul>
+    {% for order in create_order %}
+        <li>
+            <a href="{% url 'create_order' create %}">{{ create_order }}</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
