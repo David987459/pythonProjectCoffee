@@ -89,4 +89,5 @@ Ve složce `orders/admin` zaregistrovány modely.
 `admin.site.register(Product)`
 `admin.site.register(OrderItem)`
 
-
+### Pridanie branch develop 
+git checkout - develop
