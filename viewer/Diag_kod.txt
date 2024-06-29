@@ -1,0 +1,65 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+Table hodnoceni {
+ reg_user_id integer
+ hodnoceni varchar
+ hvezdy integer
+ datum timestamp
+}
+Table produkty {
+ produkt_id integer [primary key]
+ název_produktu varchar
+ náhled url
+ druh_produktu varchar
+ zeme_puvodu varchar
+ kategorie_produktu bool
+ cena integer
+ popis varchar
+ ks_skladem integer
+}
+Table kos {
+kos_id integer
+produkt_id integer
+pocet_ks integer
+cena_celkem float
+}
+Table objednávka {
+order_id integer
+datum_objednávky datetime
+user_id integer
+cena_objednávky integer
+kos_id integer
+}
+Table uzivatele {
+ user_id integer [primary key]
+ jmeno varchar
+ prijmeni varchar
+ oblibene integer
+ status varchar
+ registrovan_dne timestamp
+ ulice varchar
+ psc integer
+ mesto varchar
+}
+
+Table zeme_puvodu {
+  zeme_id integer
+  Nazev_zeme varchar
+}
+
+Table druh_prod {
+  druh_id integer
+  druh_prod varchar
+}
+
+
+
+Ref: produkty.produkt_id < hodnoceni.hodnoceni
+Ref: produkty.produkt_id < hodnoceni.hvezdy
+Ref: hodnoceni.reg_user_id < uzivatele.user_id
+Ref: uzivatele.oblibene > produkty.produkt_id // many-to-one
+Ref: uzivatele.user_id > objednávka.user_id
+Ref: kos.kos_id > objednávka.kos_id
+Ref: zeme_puvodu.zeme_id < produkty.zeme_puvodu
+Ref: produkty.druh_produktu < druh_prod.druh_id
+
