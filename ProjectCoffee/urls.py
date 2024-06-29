@@ -25,5 +25,6 @@ urlpatterns = [
     path('', home, name='home'),
     path('create/', create_order, name='create_order'),
     path('summary/',order_summary, name='order_summary'),
+    path('products/', products, name='products'),
 ]
 

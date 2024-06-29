@@ -90,3 +90,30 @@ Ve složce `orders/admin` zaregistrovány modely.
 `admin.site.register(OrderItem)`
 
 
+
+
+
+### Create admin 
+Pomocí příkazu `admin manage.py createsuperuser` vytvoříme admin panel s přihlašováním.
+
+
+### Vytvoření aplikace `orders`
+Ve složce `ProjectCoffee/settings/installed apps napojena cesta 'orders',` .
+```INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    # our applications
+    'viewer',
+    'orders',
+]
+```
+Ve složce `orders/admin` zaregistrovány modely.
+`admin.site.register(Product)`
+`admin.site.register(OrderItem)`
+
+

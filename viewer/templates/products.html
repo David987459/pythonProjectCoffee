@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nabídka našich káv</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Calibri:wght@300&display=swap">
+    <style>
+        body {
+            font-family: 'Calibri', sans-serif;
+            background-color: #f9f1e9; /* Světle hnědá barva pozadí */
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3em;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 20px;
+            text-align: justify;
+            color: #555;
+        }
+        .services {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            background-color: #fff; /* Bílé pozadí tabulky */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-top: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 15px;
+            text-align: left;
+            color: #333;
+        }
+        th {
+            background-color: #4caf50;
+            color: white;
+            text-transform: uppercase;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: #e0e0e0;
+        }
+        tr:hover {
+            background-color: #cce6ff;
+            color: #333;
+        }
+        td {
+            border-bottom: 1px solid #ddd;
+        }
+        .product-name {
+            font-weight: bold;
+            color: #8d6e63; /* Hnědá barva pro názvy produktů */
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .product-details {
+            display: none; /* Skryjeme detaily kávy */
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .show {
+            display: block !important; /* Zobrazíme skryté elementy */
+        }
+        .order-btn {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .order-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="services">
+        <h1>VÍTEJTE V NAŠEM e-shopu, KDE SI MŮŽETE ZAKOUPIT NAŠE VÝROBKY!</h1>
+        <p>
+            Nabízíme široký výběr kvalitní kávy z celého světa. Prozkoumejte naši nabídku a najděte svou novou oblíbenou kávu.
+        </p>
+    </div>
+    <table>
+        <tr>
+            <th>Káva</th>
+        </tr>
+        <tr class="coffee-item">
+            <td class="product-name">ZRNKOVÁ KÁVA</td>
+        </tr>
+        <tr class="product-details">
+            <td colspan="2">
+                <div class="product-details-content">
+                    <p><strong>Druh:</strong> ZRNKOVÁ KÁVA</p>
+                    <p><strong>Popis:</strong> Silná a intenzivní káva s bohatou chutí, ideální pro rychlé povzbuzení.</p>
+                    <div class="buy-section">
+                        <label for="quantity-espresso">Množství:</label>
+                        <input type="number" id="quantity-espresso" name="quantity-espresso" min="1" value="1">
+                        <button class="order-btn">Koupit</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="coffee-item">
+            <td class="product-name">MLETÁ KÁVA</td>
+        </tr>
+        <tr class="product-details">
+            <td colspan="2">
+                <div class="product-details-content">
+                    <p><strong>Druh:</strong> MLETÁ KÁVA</p>
+                    <p><strong>Popis:</strong> Jemná káva s bohatým mlékem a jemnou pěnou na povrchu.</p>
+                    <div class="buy-section">
+                        <label for="quantity-latte">Množství:</label>
+                        <input type="number" id="quantity-latte" name="quantity-latte" min="1" value="1">
+                        <button class="order-btn">Koupit</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="coffee-item">
+            <td class="product-name">KÁVA BEZ KOFEINU</td>
+        </tr>
+        <tr class="product-details">
+            <td colspan="2">
+                <div class="product-details-content">
+                    <p><strong>Druh:</strong> KÁVA BEZ KOFEINU</p>
+                    <p><strong>Popis:</strong> Vyvážená kombinace espressa, horkého mléka a mléčné pěny.</p>
+                    <div class="buy-section">
+                        <label for="quantity-cappuccino">Množství:</label>
+                        <input type="number" id="quantity-cappuccino" name="quantity-cappuccino" min="1" value="1">
+                        <button class="order-btn">Koupit</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="coffee-item">
+            <td class="product-name">AROMATIZOVANÁ KÁVA</td>
+        </tr>
+        <tr class="product-details">
+            <td colspan="2">
+                <div class="product-details-content">
+                    <p><strong>Druh:</strong> AROMATIZOVANÁ KÁVA</p>
+                    <p><strong>Popis:</strong> Espresso rozředěné horkou vodou, což vytváří jemnější chuť.</p>
+                    <div class="buy-section">
+                        <label for="quantity-americano">Množství:</label>
+                        <input type="number" id="quantity-americano" name="quantity-americano" min="1" value="1">
+                        <button class="order-btn">Koupit</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="coffee-item">
+            <td class="product-name">VÝBĚROVÁ KÁVA</td>
+        </tr>
+        <tr class="product-details">
+            <td colspan="2">
+                <div class="product-details-content">
+                    <p><strong>Druh:</strong> VÝBĚROVÁ KÁVA</p>
+                    <p><strong>Popis:</strong> Lahodná kombinace espressa, čokolády a horkého mléka.</p>
+                    <div class="buy-section">
+                        <label for="quantity-mocha">Množství:</label>
+                        <input type="number" id="quantity-mocha" name="quantity-mocha" min="1" value="1">
+                        <button class="order-btn">Koupit</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        // JavaScript pro zobrazování detailů kávy po kliknutí
+        document.querySelectorAll('.coffee-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Skryjeme všechny detaily kávy
+                document.querySelectorAll('.product-details').forEach(detail => {
+                    detail.classList.remove('show');
+                });
+                // Zobrazíme pouze vybraný detail kávy
+                let detailsRow = this.nextElementSibling;
+                detailsRow.classList.add('show');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
