@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: 'Calibri', sans-serif;
-            background-color: #f9f1e9; /* Světle hnědá barva pozadí */
+            background-color: #f0f0f0;
             color: #333;
             margin: 0;
             padding: 20px;
@@ -42,7 +42,7 @@
         table {
             width: 80%;
             border-collapse: collapse;
-            background-color: #fff; /* Bílé pozadí tabulky */
+            background-color: #fff;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
             margin-top: 20px;
             border-radius: 8px;
@@ -73,20 +73,34 @@
         }
         .product-name {
             font-weight: bold;
-            color: #8d6e63; /* Hnědá barva pro názvy produktů */
+            color: #4caf50;
             cursor: pointer;
             text-decoration: underline;
+            position: relative; /* Pro umístění ikonky */
+        }
+        .product-name .add-to-cart-icon {
+            position: absolute;
+            top: 0;
+            right: -30px; /* Vzdálenost ikonky od textu produktu */
+            font-size: 1.5em;
+            cursor: pointer;
         }
         .product-details {
-            display: none; /* Skryjeme detaily kávy */
+            display: none; /* Hidden by default */
             background-color: #f9f9f9;
             padding: 10px;
             margin-top: 10px;
             border-radius: 4px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        .show {
-            display: block !important; /* Zobrazíme skryté elementy */
+        .product-details.show {
+            display: block; /* Show when "show" class is applied */
+        }
+        .buy-section {
+            margin-top: 10px;
+        }
+        .buy-section label {
+            margin-right: 10px;
         }
         .order-btn {
             background-color: #4caf50;
@@ -96,120 +110,263 @@
             font-size: 1em;
             cursor: pointer;
             border-radius: 4px;
-            margin-top: 10px;
             transition: background-color 0.3s ease;
         }
         .order-btn:hover {
             background-color: #45a049;
         }
+        #cart {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+            padding: 20px;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            z-index: 1000;
+        }
+        #cart.show {
+            transform: translateX(0);
+        }
+        .cart-item-info {
+            margin-bottom: 10px;
+        }
+        .remove-from-cart-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            font-size: 0.9em;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .remove-from-cart-btn:hover {
+            background-color: #c82333;
+        }
+        #cart-total {
+            margin-top: auto;
+            font-weight: bold;
+        }
+        #cart-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
     <div class="services">
-        <h1>VÍTEJTE V NAŠEM e-shopu, KDE SI MŮŽETE ZAKOUPIT NAŠE VÝROBKY!</h1>
+        <h1>Vítejte v našem e-shopu s kávou!</h1>
         <p>
-            Nabízíme široký výběr kvalitní kávy z celého světa. Prozkoumejte naši nabídku a najděte svou novou oblíbenou kávu.
+            Nabízíme široký výběr kvalitní kávy z celého světa. Ať už jste milovníkem silného espressa nebo lahodného latte, u nás si vyberete. Každý druh kávy je pečlivě vybírán a pražen, aby vám poskytl ten nejlepší zážitek. Prozkoumejte naši nabídku a najděte svou novou oblíbenou kávu.
         </p>
     </div>
     <table>
         <tr>
             <th>Káva</th>
         </tr>
-        <tr class="coffee-item">
-            <td class="product-name">ZRNKOVÁ KÁVA</td>
+        <tr class="coffee-item" id="coffee-zrnkova-kava">
+            <td class="product-name">
+                Zrnková káva
+                <span class="add-to-cart-icon" onclick="addToCart('Zrnková káva')">🛒</span>
+            </td>
         </tr>
-        <tr class="product-details">
+        <tr class="product-details" id="detail-zrnkova-kava">
             <td colspan="2">
                 <div class="product-details-content">
-                    <p><strong>Druh:</strong> ZRNKOVÁ KÁVA</p>
-                    <p><strong>Popis:</strong> Silná a intenzivní káva s bohatou chutí, ideální pro rychlé povzbuzení.</p>
+                    <p><strong>Druh:</strong> Zrnková káva</p>
+                    <p><strong>Popis:</strong> Káva z celých zrn, které si můžete namlít podle svých preferencí.</p>
+                    <div class="buy-section">
+                        <label for="quantity-zrnkova">Množství:</label>
+                        <input type="number" id="quantity-zrnkova" name="quantity-zrnkova" min="1" value="1">
+                        <button class="order-btn" onclick="addToCart('Zrnková káva')">Koupit</button>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr class="coffee-item" id="coffee-espresso">
+            <td class="product-name">
+                Espresso
+                <span class="add-to-cart-icon" onclick="addToCart('Espresso')">🛒</span>
+            </td>
+        </tr>
+        <tr class="product-details" id="detail-espresso">
+            <td colspan="2">
+                <div class="product-details-content">
+                    <p><strong>Druh:</strong> Espresso</p>
+                    <p><strong>Popis:</strong> Silná káva s intenzivní chutí a vůní, ideální pro milovníky espressa.</p>
                     <div class="buy-section">
                         <label for="quantity-espresso">Množství:</label>
                         <input type="number" id="quantity-espresso" name="quantity-espresso" min="1" value="1">
-                        <button class="order-btn">Koupit</button>
+                        <button class="order-btn" onclick="addToCart('Espresso')">Koupit</button>
                     </div>
                 </div>
             </td>
         </tr>
-        <tr class="coffee-item">
-            <td class="product-name">MLETÁ KÁVA</td>
+        <tr class="coffee-item" id="coffee-latte">
+            <td class="product-name">
+                Latte
+                <span class="add-to-cart-icon" onclick="addToCart('Latte')">🛒</span>
+            </td>
         </tr>
-        <tr class="product-details">
+        <tr class="product-details" id="detail-latte">
             <td colspan="2">
                 <div class="product-details-content">
-                    <p><strong>Druh:</strong> MLETÁ KÁVA</p>
-                    <p><strong>Popis:</strong> Jemná káva s bohatým mlékem a jemnou pěnou na povrchu.</p>
+                    <p><strong>Druh:</strong> Latte</p>
+                    <p><strong>Popis:</strong> Míchaný nápoj z espressa a horkého mléka, který je ideální pro milovníky mírnějších chutí.</p>
                     <div class="buy-section">
                         <label for="quantity-latte">Množství:</label>
                         <input type="number" id="quantity-latte" name="quantity-latte" min="1" value="1">
-                        <button class="order-btn">Koupit</button>
+                        <button class="order-btn" onclick="addToCart('Latte')">Koupit</button>
                     </div>
                 </div>
             </td>
         </tr>
-        <tr class="coffee-item">
-            <td class="product-name">KÁVA BEZ KOFEINU</td>
+        <!-- Ostatní produkty zde -->
+        <tr class="coffee-item" id="coffee-cappuccino">
+            <td class="product-name">
+                Cappuccino
+                <span class="add-to-cart-icon" onclick="addToCart('Cappuccino')">🛒</span>
+            </td>
         </tr>
-        <tr class="product-details">
+        <tr class="product-details" id="detail-cappuccino">
             <td colspan="2">
                 <div class="product-details-content">
-                    <p><strong>Druh:</strong> KÁVA BEZ KOFEINU</p>
-                    <p><strong>Popis:</strong> Vyvážená kombinace espressa, horkého mléka a mléčné pěny.</p>
+                    <p><strong>Druh:</strong> Cappuccino</p>
+                    <p><strong>Popis:</strong> Káva s vyváženým poměrem espressa, horkého mléka a mléčné pěny.</p>
                     <div class="buy-section">
                         <label for="quantity-cappuccino">Množství:</label>
                         <input type="number" id="quantity-cappuccino" name="quantity-cappuccino" min="1" value="1">
-                        <button class="order-btn">Koupit</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="coffee-item">
-            <td class="product-name">AROMATIZOVANÁ KÁVA</td>
-        </tr>
-        <tr class="product-details">
-            <td colspan="2">
-                <div class="product-details-content">
-                    <p><strong>Druh:</strong> AROMATIZOVANÁ KÁVA</p>
-                    <p><strong>Popis:</strong> Espresso rozředěné horkou vodou, což vytváří jemnější chuť.</p>
-                    <div class="buy-section">
-                        <label for="quantity-americano">Množství:</label>
-                        <input type="number" id="quantity-americano" name="quantity-americano" min="1" value="1">
-                        <button class="order-btn">Koupit</button>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        <tr class="coffee-item">
-            <td class="product-name">VÝBĚROVÁ KÁVA</td>
-        </tr>
-        <tr class="product-details">
-            <td colspan="2">
-                <div class="product-details-content">
-                    <p><strong>Druh:</strong> VÝBĚROVÁ KÁVA</p>
-                    <p><strong>Popis:</strong> Lahodná kombinace espressa, čokolády a horkého mléka.</p>
-                    <div class="buy-section">
-                        <label for="quantity-mocha">Množství:</label>
-                        <input type="number" id="quantity-mocha" name="quantity-mocha" min="1" value="1">
-                        <button class="order-btn">Koupit</button>
+                        <button class="order-btn" onclick="addToCart('Cappuccino')">Koupit</button>
                     </div>
                 </div>
             </td>
         </tr>
     </table>
 
+    <div id="cart">
+        <h2>Váš nákupní košík</h2>
+        <div id="cart-items"></div>
+        <p id="cart-total">Celková cena: 0 Kč</p>
+        <button onclick="checkout()">Dokončit objednávku</button>
+    </div>
+
+    <div id="cart-icon">
+        <span onclick="toggleCart()">🛒</span>
+    </div>
+
     <script>
-        // JavaScript pro zobrazování detailů kávy po kliknutí
-        document.querySelectorAll('.coffee-item').forEach(item => {
-            item.addEventListener('click', function() {
-                // Skryjeme všechny detaily kávy
-                document.querySelectorAll('.product-details').forEach(detail => {
-                    detail.classList.remove('show');
+        // Inicializace košíku a funkce pro jeho zobrazení
+        function displayCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartContainer = document.getElementById('cart-items');
+            let totalPrice = 0;
+
+            cartContainer.innerHTML = ''; // Vyčistíme obsah košíku před přidáním nových položek
+
+            cart.forEach(item => {
+                let cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <div class="cart-item-info">
+                        <span>${item.name}</span> - <span>${item.quantity}x ${item.price} Kč</span>
+                    </div>
+                    <button class="remove-from-cart-btn" onclick="removeFromCart('${item.name}')">Odstranit</button>
+                `;
+                cartContainer.appendChild(cartItem);
+                totalPrice += item.quantity * item.price;
+            });
+
+            document.getElementById('cart-total').textContent = `Celková cena: ${totalPrice} Kč`;
+        }
+
+        // Funkce pro přidání produktu do košíku
+        function addToCart(productName) {
+            let price = Math.floor(Math.random() * 50) + 50; // Simulace ceny produktu
+            let quantity = parseInt(document.getElementById(`quantity-${productName.toLowerCase().replace(/ /g, "-")}`).value);
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            // Zkontrolujeme, zda produkt již není v košíku
+            let existingItem = cart.find(item => item.name === productName);
+
+            if (existingItem) {
+                existingItem.quantity += quantity;
+            } else {
+                cart.push({ name: productName, price: price, quantity: quantity });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            // Aktualizace zobrazení košíku
+            displayCart();
+        }
+
+        // Funkce pro odstranění produktu z košíku
+        function removeFromCart(productName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let updatedCart = cart.filter(item => item.name !== productName);
+            localStorage.setItem('cart', JSON.stringify(updatedCart));
+
+            // Aktualizace zobrazení košíku
+            displayCart();
+        }
+
+        // Funkce pro dokončení objednávky (jednoduchá simulace)
+        function checkout() {
+            localStorage.removeItem('cart');
+            alert('Objednávka byla dokončena.');
+            displayCart(); // Aktualizace zobrazení košíku
+        }
+
+        // Funkce pro zobrazení/skrytí košíku
+        function toggleCart() {
+            let cart = document.getElementById('cart');
+            cart.classList.toggle('show');
+        }
+
+        // Inicializace - zobrazení košíku při načtení stránky
+        document.addEventListener('DOMContentLoaded', function () {
+            displayCart();
+
+            // Zobrazování popisu produktu po kliknutí
+            let productNames = document.querySelectorAll('.product-name');
+            productNames.forEach(name => {
+                name.addEventListener('click', function () {
+                    let details = this.nextElementSibling; // Následující element je detail produktu
+                    details.classList.toggle('show'); // Přepínání viditelnosti detailů produktu
+
+                    // Zajištění, že tlačítko "Přidat do košíku" je viditelné pouze při rozkliknutém detailu
+                    let addToCartBtn = details.querySelector('.order-btn');
+                    if (addToCartBtn) {
+                        addToCartBtn.style.display = details.classList.contains('show') ? 'inline-block' : 'none';
+                    }
                 });
-                // Zobrazíme pouze vybraný detail kávy
-                let detailsRow = this.nextElementSibling;
-                detailsRow.classList.add('show');
             });
         });
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
