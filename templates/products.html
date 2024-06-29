@@ -86,7 +86,7 @@
             cursor: pointer;
         }
         .product-details {
-            display: none; /* Hidden by default */
+            display: none; /* Skryté základně */
             background-color: #f9f9f9;
             padding: 10px;
             margin-top: 10px;
@@ -94,7 +94,7 @@
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .product-details.show {
-            display: block; /* Show when "show" class is applied */
+            display: block; /* Zobrazené, když je přidána třída "show" */
         }
         .buy-section {
             margin-top: 10px;
@@ -183,10 +183,11 @@
                 <div class="product-details-content">
                     <p><strong>Druh:</strong> Zrnková káva</p>
                     <p><strong>Popis:</strong> Káva z celých zrn, které si můžete namlít podle svých preferencí.</p>
+                    <p><strong>Cena:</strong> <span id="price-zrnkova-kava"></span> Kč</p>
                     <div class="buy-section">
                         <label for="quantity-zrnkova">Množství:</label>
                         <input type="number" id="quantity-zrnkova" name="quantity-zrnkova" min="1" value="1">
-                        <button class="order-btn" onclick="addToCart('Zrnková káva')">Koupit</button>
+                        <button class="order-btn" onclick="addToCart('Zrnková káva')">Přidat do košíku</button>
                     </div>
                 </div>
             </td>
@@ -202,10 +203,11 @@
                 <div class="product-details-content">
                     <p><strong>Druh:</strong> Espresso</p>
                     <p><strong>Popis:</strong> Silná káva s intenzivní chutí a vůní, ideální pro milovníky espressa.</p>
+                    <p><strong>Cena:</strong> <span id="price-espresso"></span> Kč</p>
                     <div class="buy-section">
                         <label for="quantity-espresso">Množství:</label>
                         <input type="number" id="quantity-espresso" name="quantity-espresso" min="1" value="1">
-                        <button class="order-btn" onclick="addToCart('Espresso')">Koupit</button>
+                        <button class="order-btn" onclick="addToCart('Espresso')">Přidat do košíku</button>
                     </div>
                 </div>
             </td>
@@ -220,16 +222,16 @@
             <td colspan="2">
                 <div class="product-details-content">
                     <p><strong>Druh:</strong> Latte</p>
-                    <p><strong>Popis:</strong> Míchaný nápoj z espressa a horkého mléka, který je ideální pro milovníky mírnějších chutí.</p>
+                    <p><strong>Popis:</strong> Jemné espresso s horkým mlékem a mléčnou pěnou, ideální pro ty, kteří hledají kombinaci kávy a mléka.</p>
+                    <p><strong>Cena:</strong> <span id="price-latte"></span> Kč</p>
                     <div class="buy-section">
                         <label for="quantity-latte">Množství:</label>
                         <input type="number" id="quantity-latte" name="quantity-latte" min="1" value="1">
-                        <button class="order-btn" onclick="addToCart('Latte')">Koupit</button>
+                        <button class="order-btn" onclick="addToCart('Latte')">Přidat do košíku</button>
                     </div>
                 </div>
             </td>
         </tr>
-        <!-- Ostatní produkty zde -->
         <tr class="coffee-item" id="coffee-cappuccino">
             <td class="product-name">
                 Cappuccino
@@ -241,10 +243,11 @@
                 <div class="product-details-content">
                     <p><strong>Druh:</strong> Cappuccino</p>
                     <p><strong>Popis:</strong> Káva s vyváženým poměrem espressa, horkého mléka a mléčné pěny.</p>
+                    <p><strong>Cena:</strong> <span id="price-cappuccino"></span> Kč</p>
                     <div class="buy-section">
                         <label for="quantity-cappuccino">Množství:</label>
                         <input type="number" id="quantity-cappuccino" name="quantity-cappuccino" min="1" value="1">
-                        <button class="order-btn" onclick="addToCart('Cappuccino')">Koupit</button>
+                        <button class="order-btn" onclick="addToCart('Cappuccino')">Přidat do košíku</button>
                     </div>
                 </div>
             </td>
@@ -336,6 +339,13 @@
         document.addEventListener('DOMContentLoaded', function () {
             displayCart();
 
+            // Generování náhodné ceny pro každý produkt
+            let products = ['Zrnková káva', 'Espresso', 'Latte', 'Cappuccino'];
+            products.forEach(product => {
+                let price = Math.floor(Math.random() * 50) + 50; // Náhodná cena od 50 do 99
+                document.getElementById(`price-${product.toLowerCase().replace(/ /g, "-")}`).textContent = `${price}`;
+            });
+
             // Zobrazování popisu produktu po kliknutí
             let productNames = document.querySelectorAll('.product-name');
             productNames.forEach(name => {
@@ -354,6 +364,7 @@
     </script>
 </body>
 </html>
+
 
 
 
