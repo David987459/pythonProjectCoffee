@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b18e3f5d-aa27-499b-ba0b-1e640ccf16de" name="Changes" comment="Osnova a DB Diag">
-      <change afterPath="$PROJECT_DIR$/viewer/Diag_kod.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewer/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/viewer/models.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +90,7 @@
       <workItem from="1719045030465" duration="944000" />
       <workItem from="1719128407419" duration="1428000" />
       <workItem from="1719644606773" duration="1525000" />
-      <workItem from="1719646288809" duration="2698000" />
+      <workItem from="1719646288809" duration="6847000" />
     </task>
     <task id="LOCAL-00001" summary="Osnova a DB Diag">
       <option name="closed" value="true" />
@@ -116,7 +116,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719142628814</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Osnova a DB Diag">
+      <option name="closed" value="true" />
+      <created>1719649326884</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719649326884</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,7 +141,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="origin/master" />
+                        <option value="origin/Osnova-uprava1" />
                       </list>
                     </value>
                   </entry>
