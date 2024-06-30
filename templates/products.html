@@ -160,6 +160,18 @@
             z-index: 1000;
         }
     </style>
+
+    <script>
+        // https://www.w3schools.com/howto/howto_js_toggle_hide_show.asp
+        function myFunction() {
+        var x = document.getElementById("myDIV");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+    </script>
 </head>
 <body>
     <div class="services">
@@ -174,40 +186,64 @@
         </tr>
         <tr class="coffee-item" id="coffee-zrnkova-kava">
             <td class="product-name">
-                Zrnková káva
+                 <span onclick="myFunction()">Zrnková káva</span>
+
+                    <div id="myDIV" style="display: None">
+                        <p><strong>Popis:</strong> Káva z celých zrn, které si můžete namlít podle svých preferencí.</p>
+                        <p><strong>Cena:</strong> <span id="price-zrnkova-kava"></span> Kč</p>
+                        <div class="buy-section">
+                            <label for="quantity-zrnková-káva">Množství:</label>
+                            <input type="number" id="quantity-zrnková-káva" name="quantity-zrnkova" min="1" value="1">
+                            <button class="order-btn" onclick="addToCart('Zrnková káva')">Přidat do košíku</button>
+                        </div>
+                    </div>
+
                 <span class="add-to-cart-icon" onclick="addToCart('Zrnková káva')">🛒</span>
             </td>
         </tr>
         <tr class="product-details" id="detail-zrnkova-kava">
             <td colspan="2">
                 <div class="product-details-content">
-                    <p><strong>Druh:</strong> Zrnková káva</p>
-                    <p><strong>Popis:</strong> Káva z celých zrn, které si můžete namlít podle svých preferencí.</p>
-                    <p><strong>Cena:</strong> <span id="price-zrnkova-kava"></span> Kč</p>
-                    <div class="buy-section">
-                        <label for="quantity-zrnkova">Množství:</label>
-                        <input type="number" id="quantity-zrnkova" name="quantity-zrnkova" min="1" value="1">
-                        <button class="order-btn" onclick="addToCart('Zrnková káva')">Přidat do košíku</button>
-                    </div>
+                    <p><strong>Druh:</strong> Zrnková káva
+<!--                    <button onclick="myFunction()">Click Me</button></p>-->
+
+<!--                    <div id="myDIV">-->
+<!--                        <p><strong>Popis:</strong> Káva z celých zrn, které si můžete namlít podle svých preferencí.</p>-->
+<!--                        <p><strong>Cena:</strong> <span id="price-zrnkova-kava"></span> Kč</p>-->
+<!--                        <div class="buy-section">-->
+<!--                            <label for="quantity-zrnkova">Množství:</label>-->
+<!--                            <input type="number" id="quantity-zrnkova" name="quantity-zrnkova" min="1" value="1">-->
+<!--                            <button class="order-btn" onclick="addToCart('Zrnková káva')">Přidat do košíku</button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
                 </div>
             </td>
         </tr>
         <tr class="coffee-item" id="coffee-espresso">
-            <td class="product-name">
-                Espresso
-                <span class="add-to-cart-icon" onclick="addToCart('Espresso')">🛒</span>
-            </td>
-        </tr>
-        <tr class="product-details" id="detail-espresso">
-            <td colspan="2">
-                <div class="product-details-content">
-                    <p><strong>Druh:</strong> Espresso</p>
-                    <p><strong>Popis:</strong> Silná káva s intenzivní chutí a vůní, ideální pro milovníky espressa.</p>
-                    <p><strong>Cena:</strong> <span id="price-espresso"></span> Kč</p>
-                    <div class="buy-section">
-                        <label for="quantity-espresso">Množství:</label>
-                        <input type="number" id="quantity-espresso" name="quantity-espresso" min="1" value="1">
-                        <button class="order-btn" onclick="addToCart('Espresso')">Přidat do košíku</button>
+    <td class="product-name">
+        <span onclick="myFunction('details-espresso')">Espresso</span>
+
+        <div id="details-espresso" style="display: none;">
+            <p><strong>Popis:</strong> Silná a aromatická káva pro milovníky intenzivních chutí.</p>
+            <p><strong>Cena:</strong> <span id="price-espresso">250</span> Kč</p>
+            <div class="buy-section">
+                <label for="quantity-espresso">Množství:</label>
+                <input type="number" id="quantity-espresso" name="quantity-espresso" min="1" value="1">
+                <button class="order-btn" onclick="addToCart('Espresso')">Přidat do košíku</button>
+            </div>
+        </div>
+
+        <span class="add-to-cart-icon" onclick="addToCart('Espresso')">🛒</span>
+    </td>
+</tr>
+<tr class="product-details" id="detail-espresso">
+    <td colspan="2">
+        <div class="product-details-content">
+            <p><strong>Druh:</strong> Espresso</p>
+        </div>
+    </td>
+</tr>
                     </div>
                 </div>
             </td>
@@ -293,6 +329,8 @@
         // Funkce pro přidání produktu do košíku
         function addToCart(productName) {
             let price = Math.floor(Math.random() * 50) + 50; // Simulace ceny produktu
+            console.log(productName.toLowerCase())
+            console.log(productName.toLowerCase().replace(/ /g, "-"))
             let quantity = parseInt(document.getElementById(`quantity-${productName.toLowerCase().replace(/ /g, "-")}`).value);
 
             let cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -343,11 +381,11 @@
             let products = ['Zrnková káva', 'Espresso', 'Latte', 'Cappuccino'];
             products.forEach(product => {
                 let price = Math.floor(Math.random() * 50) + 50; // Náhodná cena od 50 do 99
-                document.getElementById(`price-${product.toLowerCase().replace(/ /g, "-")}`).textContent = `${price}`;
+                //document.getElementById(`price-${product.toLowerCase().replace(/ /g, "-")}`).textContent = `${price}`;
             });
 
             // Zobrazování popisu produktu po kliknutí
-            let productNames = document.querySelectorAll('.product-name');
+           /* let productNames = document.querySelectorAll('.product-name');
             productNames.forEach(name => {
                 name.addEventListener('click', function () {
                     let details = this.nextElementSibling; // Následující element je detail produktu
@@ -359,11 +397,12 @@
                         addToCartBtn.style.display = details.classList.contains('show') ? 'inline-block' : 'none';
                     }
                 });
-            });
+            });*/
         });
     </script>
 </body>
 </html>
+
 
 
 
