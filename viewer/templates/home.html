@@ -3,7 +3,7 @@
 
 {% block content %}
 <div class="hero" style="background-image: url('{% static "images/pexels-emine-gizem-dokuzlar-806264421-23996359.jpg" %}');">
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(179, 230, 150, 0.6);;">
+ <!--   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(179, 230, 150, 0.6);;">
         <div class="container">
             <a class="navbar-brand" href="{% url 'home' %}">CoffeShop</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
@@ -15,12 +15,12 @@
                     <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Produkty</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Hodnotenia</a></li>
                     <li class="nav-item"><a class="nav-link" href="">Kontakt</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">O Nás</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'o_nas' %}">O Nás</a></li>
 
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav-->>
     <h1 class="three-d-rotate">Welcome To CoffeShop!</h1>
 </div>
 
@@ -43,14 +43,14 @@
         top: 0;
         left: 0;
         background: rgba(0, 0, 0, 0.5);
-        font-size: 1.2em; /* Nagyobb betűméret */
+        font-size: 1.2em;
     }
 
     .three-d-rotate {
         color: #b3e696;
         display: inline-block;
         perspective: 1000px;
-        font-size: 3em; /* Nagyobb betűméret */
+        font-size: 3em;
     }
 
     .three-d-rotate span {
