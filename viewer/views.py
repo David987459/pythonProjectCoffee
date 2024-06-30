@@ -13,3 +13,7 @@ def home(request):
 
 def products(request):
     return render(request, 'products.html', {'products': Product.objects.all()})
+
+
+def o_nas(request):
+    return render(request, 'o_nas.html')

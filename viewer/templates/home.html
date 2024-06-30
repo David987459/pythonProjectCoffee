@@ -1,7 +1,81 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+<div class="hero" style="background-image: url('{% static "images/pexels-emine-gizem-dokuzlar-806264421-23996359.jpg" %}');">
+ <!--   <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: rgba(179, 230, 150, 0.6);;">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">CoffeShop</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'products' %}">Produkty</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Hodnotenia</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'o_nas' %}">O Nás</a></li>
 
-<h1>Welcome to CoffeShop!</h1>
+                </ul>
+            </div>
+        </div>
+    </nav-->>
+    <h1 class="three-d-rotate">Welcome To CoffeShop!</h1>
+</div>
 
+<style>
+    .hero {
+        background-size: cover;
+        background-position: center;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    .navbar {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        font-size: 1.2em;
+    }
+
+    .three-d-rotate {
+        color: #b3e696;
+        display: inline-block;
+        perspective: 1000px;
+        font-size: 3em;
+    }
+
+    .three-d-rotate span {
+        display: inline-block;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        animation: rotate 10s forwards;
+        transform-style: preserve-3d;
+        animation-delay: calc(var(--i) * 0.1s);
+    }
+
+    @keyframes rotate {
+        0%, 100% {
+            transform: rotateX(0deg);
+        }
+        50% {
+            transform: rotateX(360deg);
+        }
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.three-d-rotate').forEach(el => {
+        el.innerHTML = el.textContent.split('').map((char, i) =>
+            `<span style="--i:${i}">${char}</span>`
+        ).join('');
+    });
+</script>
 {% endblock %}
