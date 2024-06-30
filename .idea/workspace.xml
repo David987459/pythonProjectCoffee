@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b18e3f5d-aa27-499b-ba0b-1e640ccf16de" name="Changes" comment="Create orders app.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="b18e3f5d-aa27-499b-ba0b-1e640ccf16de" name="Changes" comment="creating products template - UPDATE (Zrnková káva funkční, další položky nefunkční.)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectCoffee/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCoffee/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectCoffee/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectCoffee/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/forms_1.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/orders/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/orders/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/products.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/products.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -30,7 +27,7 @@
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
-    <option name="RECENT_COMMON_BRANCH" value="master" />
+    <option name="RECENT_COMMON_BRANCH" value="create_orders_application" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
@@ -55,20 +52,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;create__orders__application&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.products.html.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "html-products-update",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProjectCoffee" />
@@ -114,7 +113,14 @@
       <workItem from="1719045030465" duration="944000" />
       <workItem from="1719128407419" duration="2317000" />
       <workItem from="1719145517725" duration="81000" />
-      <workItem from="1719145835598" duration="431000" />
+      <workItem from="1719145835598" duration="793000" />
+      <workItem from="1719323830786" duration="1256000" />
+      <workItem from="1719326816321" duration="9989000" />
+      <workItem from="1719644884057" duration="9206000" />
+      <workItem from="1719654309937" duration="4323000" />
+      <workItem from="1719660251353" duration="2277000" />
+      <workItem from="1719662575992" duration="935000" />
+      <workItem from="1719730601223" duration="9320000" />
     </task>
     <task id="LOCAL-00001" summary="Test">
       <option name="closed" value="true" />
@@ -156,7 +162,55 @@
       <option name="project" value="LOCAL" />
       <updated>1719143459684</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Create orders app.">
+      <option name="closed" value="true" />
+      <created>1719146363479</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719146363479</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Make migrations.">
+      <option name="closed" value="true" />
+      <created>1719331773479</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719331773479</updated>
+    </task>
+    <task id="LOCAL-00008" summary="creating products template">
+      <option name="closed" value="true" />
+      <created>1719654686482</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719654686482</updated>
+    </task>
+    <task id="LOCAL-00009" summary="creating products template - UPDATE">
+      <option name="closed" value="true" />
+      <created>1719662008629</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719662008629</updated>
+    </task>
+    <task id="LOCAL-00010" summary="creating products template - UPDATE">
+      <option name="closed" value="true" />
+      <created>1719662543052</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719662543052</updated>
+    </task>
+    <task id="LOCAL-00011" summary="creating products template - UPDATE (Zrnková káva funkční, další položky nefunkční.)">
+      <option name="closed" value="true" />
+      <created>1719745780993</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719745780993</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -167,7 +221,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="html-products-update" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -178,7 +244,11 @@
     <MESSAGE value="Osnova" />
     <MESSAGE value="Create admin" />
     <MESSAGE value="Create orders app." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create orders app." />
+    <MESSAGE value="Make migrations." />
+    <MESSAGE value="creating products template" />
+    <MESSAGE value="creating products template - UPDATE" />
+    <MESSAGE value="creating products template - UPDATE (Zrnková káva funkční, další položky nefunkční.)" />
+    <option name="LAST_COMMIT_MESSAGE" value="creating products template - UPDATE (Zrnková káva funkční, další položky nefunkční.)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
