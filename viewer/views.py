@@ -13,3 +13,8 @@ def home(request):
 
 def products(request):
     return render(request, 'products.html', {'products': Product.objects.all()})
+
+def about_us(request):
+    return render(request, 'about_us.html')
+
+

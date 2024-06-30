@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+import viewer
 from orders.views import order_summary, create_order
+from viewer import views
 from viewer.views import *
 
 urlpatterns = [
@@ -26,5 +28,6 @@ urlpatterns = [
     path('create/', create_order, name='create_order'),
     path('summary/',order_summary, name='order_summary'),
     path('products/', products, name='products'),
+    path('about_us/',views.about_us, name='about_us'),
 ]
 
